@@ -1,223 +1,118 @@
-<?xml version="1.0" ?>
-<mosinstall type="component" version="0.1">
-  <name>places</name>
-  <creationDate>06-May-2007</creationDate>
-  <author>Nicholas Dupuy</author>
-  <copyright>(C) 2007 Nykhone</copyright>
-  <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
-  <authorEmail>nykhone@yahoo.fr</authorEmail>
-  <authorUrl>nykhos.free.fr</authorUrl>
-  <version>0.1</version>
-  <description> 
-	<![CDATA[
-	<table width="100%" border=0><tr><td align="center"><h2>Places</h2></td></tr></table>
-	<div style="padding-left:8em; padding-right:9em; text-align:justify;">
-	<ol>
-		<li><h3>Project <span class="error"><b>Places Database</b></span>.</h3><br/></li>
-		<li><h3>v0.1</h3></li>
-	<ul> Country, City, Places Databases
-		<li>Cr&eacute;ation des tables s&eacute;ance et support + (old film et director).</li>
-		<li>Installation des fichiers (old style).</li>
-		<li>Cr&eacute;ation de 2 nouveaux menus (gestion des seances et configuration).</li>
-		<li>Remplissage de support (new style with id).</li>
-		<li>Remplissage de seance en fonction de seance et film (original).</li>
-		<li>Remplissage de langue (new style with id) en fonction des donnees de seance.</li>
-	</ul><br />
-	<ul> Flags images for each country
-		<li>Affichage de la liste des seances de la base (new).</li>
-		<li>Affichage des langues avec le drapeau correspondant.</li>
-		<li>Affichage sp&eacute;cial pour les films muets et sans sous titres.</li>
-		<li>Tri par ann&eacute;e, langue et support.</li>
-	</ul><br />
-	</ol>
-	</div>
-	<div align="center" class="message">adaptation for Mambo/Joomla &copy; 2007&nbsp;Nykhone<br /></div>
-	]]>
-  </description>	
-  <files>
-	<filename>install.places.php</filename>
-	<filename>pdmarker.js</filename>
-	<filename>pdmarker.css</filename>
-	<filename>places.html.php</filename>
-	<filename>places.php</filename>
-	<filename>minipage.xsl</filename>
-	<filename>uninstall.places.php</filename>
-  </files>
-  <install>
-    <queries>
-	<query>delete from `#__components` where `option` like 'com_places'</query>
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5.0" method="upgrade">
 
-	<query>create table if not exists `#__places_lieu` (
-		`id` int(5) unsigned not null auto_increment,
-		`nom` varchar(30) not null default '?',
-		`description` varchar(50) not null default '?',
-		`ville` int(5) not null default '0',
-		`section` int(5) not null default '0',
-		`latitude` varchar(10) not null default '?',
-		`longitude` varchar(10) not null default '?',
-		primary key  (`id`)
-	);
-	</query>
-	<query>create table if not exists `#__places_ville` (
-		`id` int(5) unsigned not null auto_increment,
-		`nom` varchar(30) not null default '?',
-		`pays` int(5) not null default '0',
-		primary key  (`id`)
-	);
-	</query>
-	<query>create table if not exists `#__places_pays` (
-		`id` int(5) unsigned not null auto_increment,
-		`nom` varchar(30) not null default '?',
-		`drapeau` varchar(50) not null default '?',
-		primary key  (`id`),
-		unique key  (`nom`)
-	);
-	</query>
-	<query>create table if not exists `#__places_section` (
-		`id` int(5) unsigned not null auto_increment,
-		`title` varchar(30) not null default '?',
-		`name` varchar(50) not null default '?',
-		`linkfield` varchar(50) not null default '?',
-		`params` varchar(50) not null default '?',
-		primary key  (`id`),
-		unique key  (`title`)
-	);
-	</query>
-	<query>
-CREATE TABLE `#__places_config` (
-`id` TINYINT(4) NOT NULL ,
-`mapWidth` VARCHAR(10) NOT NULL,
-`mapHeight` VARCHAR(10) NOT NULL,
-`mapBorder` TEXT,
-`zoomLevel` TINYINT(1) NOT NULL,
-`APIKey` VARCHAR(100) NOT NULL,
-`title` TEXT NOT NULL,
-`misc` TEXT,
-`centerId` INT,
-`centerLat` VARCHAR(10),
-`centerLng` VARCHAR(10),
-`autoOpen` TINYINT(1) NOT NULL,
-`showScale` TINYINT(1) NOT NULL,
-`showZoom` TINYINT(1) NOT NULL,
-`whichZoom` TINYINT(1) NOT NULL,
-`showType` TINYINT(1) NOT NULL,
-`whichType` TINYINT(1) NOT NULL,
-`pdMarkers` text,
-`geocode` TINYINT(1) NOT NULL,
-PRIMARY KEY(`id`)
-)
-	</query>
-    </queries>
-  </install>
+	<name>places</name>
+	<creationDate>25-January-2012</creationDate>
+	<author>Nicholas Dupuy</author>
+	<authorEmail>nykhone@yahoo.fr</authorEmail>
+	<authorUrl>nykhos.free.fr</authorUrl>
+	<copyright>(C) 2007-2012 Nykhone</copyright>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<version>2.0.1</version>
+	<description> 
+		<![CDATA[
+			<table width="100%" border=0><tr><td align="center"><h2>Places</h2></td></tr></table>
+			<div style="padding-left:8em; padding-right:9em; text-align:justify;">
+			<ol>
+				<li><h3>Project <span class="error"><b>Places Database</b></span>.</h3><br/></li>
+				<li><h3>v0.1</h3></li>
+			<ul> Country, City, Places Databases
+				<li>Cr&eacute;ation des tables s&eacute;ance et support + (old film et director).</li>
+				<li>Installation des fichiers (old style).</li>
+				<li>Cr&eacute;ation de 2 nouveaux menus (gestion des seances et configuration).</li>
+				<li>Remplissage de support (new style with id).</li>
+				<li>Remplissage de seance en fonction de seance et film (original).</li>
+				<li>Remplissage de langue (new style with id) en fonction des donnees de seance.</li>
+			</ul><br />
+			<ul> Flags images for each country
+				<li>Affichage de la liste des seances de la base (new).</li>
+				<li>Affichage des langues avec le drapeau correspondant.</li>
+				<li>Affichage sp&eacute;cial pour les films muets et sans sous titres.</li>
+				<li>Tri par ann&eacute;e, langue et support.</li>
+			</ul><br />
+			</ol>
+			</div>
+			<div align="center" class="message">adaptation for Mambo/Joomla &copy; 2007&nbsp;Nykhone<br /></div>
+		]]>
+	</description>	
 
-  <installfile>install.places.php</installfile>
+        <install>
+		<!-- Runs on install -->
+                <sql>
+                        <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+                </sql>
+        </install>
+        <uninstall>
+		<!-- Runs on uninstall -->
+                <sql>
+                        <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+                </sql>
+        </uninstall>
+        <update>
+		<!-- Runs on update; New in 2.5 -->
+                <schemas>
+                        <schemapath type="mysql">sql/updates/mysql</schemapath>
+                </schemas>
+        </update>
 
-  <uninstall>
-    <queries>
-	<query>delete from `#__components` where `option` like 'com_places'</query>
-    </queries>
-  </uninstall>
+	<!-- Site Main File Copy Section -->
+	<files folder="site">
+		<!--filename>pdmarker.js</filename>
+		<filename>pdmarker.css</filename>
+		<filename>places.html.php</filename>
+		<filename>places.php</filename>
+		<filename>minipage.xsl</filename-->
+	</files>
 
-  <uninstallfile>uninstall.places.php</uninstallfile>
+	<media destination="com_places" folder="media">
+		<!--filename>index.html</filename-->
+		<folder>images</folder>
+		<folder>flags</folder>
+	</media>
 
-  <administration>
-    <menu>Places</menu>
-    <submenu>
-	<menu task="config">Configuration</menu>
-	<menu task="section">Sections</menu>
-	<menu task="lieu">Places</menu>
-	<menu task="ville">Cities</menu>
-	<menu task="pays">Countries</menu>
-	<menu task="import">Import</menu>
-	<menu task="about">About</menu>
-    </submenu>
-    <files>
-	<filename>admin.places.html.php</filename>
-	<filename>admin.places.php</filename>
-	<filename>config.inc.php</filename>
-	<filename>core/about.html.php</filename>
-	<filename>core/config.html.php</filename>
-	<filename>core/config.php</filename>
-	<filename>core/google_maps.class.php</filename>
-	<filename>core/header_footer.html.php</filename>
-	<filename>core/import.html.php</filename>
-	<filename>core/lieu.html.php</filename>
-	<filename>core/lieu.php</filename>
-	<filename>core/movies.class.db.php</filename>
-	<filename>core/pays.html.php</filename>
-	<filename>core/pays.php</filename>
-	<filename>core/places.class.db.php</filename>
-	<filename>core/places.class.php</filename>
-	<filename>core/places.class.xml.php</filename>
-	<filename>core/sections.html.php</filename>
-	<filename>core/sections.php</filename>
-	<filename>core/ville.html.php</filename>
-	<filename>core/ville.php</filename>
-	<filename>toolbar.places.html.php</filename>
-	<filename>toolbar.places.php</filename>
-     </files>
-     <images>
-	<filename>images/add.gif</filename>
-	<filename>images/bar.gif</filename>
-	<filename>images/blank.png</filename>
-	<filename>images/blueman.gif</filename>
-	<filename>images/cards.jpeg</filename>
-	<filename>images/goldstar.gif</filename>
-	<filename>images/greystar.gif</filename>
-	<filename>images/minus.gif</filename>
-	<filename>images/nocover.gif</filename>
-	<filename>images/pdfexport.png</filename>
-	<filename>images/plus.gif</filename>
-	<filename>images/poll.png</filename>
-	<filename>images/rss.gif</filename>
-	<filename>images/rssexport.png</filename>
-	<filename>images/search.gif</filename>
-	<filename>images/search.png</filename>
-	<filename>images/search_f2.png</filename>
-	<filename>images/top.gif</filename>
-	<filename>images/usern.png</filename>
-	<filename>images/usern_f2.png</filename>
-	<filename>images/xlsexport.png</filename>
-	<filename>images/xml.gif</filename>
-	<filename>images/xmlexport.png</filename>
-	<filename>images/yellowman.gif</filename>
-	<filename>images/flags/allemagne.jpg</filename>
-	<filename>images/flags/arabie saoudite.jpg</filename>
-	<filename>images/flags/belgique.jpg</filename>
-	<filename>images/flags/cambodge.jpg</filename>
-	<filename>images/flags/chine.jpg</filename>
-	<filename>images/flags/coree du sud.jpg</filename>
-	<filename>images/flags/danemark.jpg</filename>
-	<filename>images/flags/espagne.jpg</filename>
-	<filename>images/flags/etats unis.jpg</filename>
-	<filename>images/flags/finlande.jpg</filename>
-	<filename>images/flags/france.jpg</filename>
-	<filename>images/flags/grece.jpg</filename>
-	<filename>images/flags/hong kong.jpg</filename>
-	<filename>images/flags/inde.jpg</filename>
-	<filename>images/flags/indonesie.jpg</filename>
-	<filename>images/flags/italie.jpg</filename>
-	<filename>images/flags/japon.jpg</filename>
-	<filename>images/flags/malaisie.jpg</filename>
-	<filename>images/flags/mexique.jpg</filename>
-	<filename>images/flags/no.jpg</filename>
-	<filename>images/flags/nouvelle zelande.jpg</filename>
-	<filename>images/flags/pays bas.jpg</filename>
-	<filename>images/flags/philippines.jpg</filename>
-	<filename>images/flags/pologne.jpg</filename>
-	<filename>images/flags/portugal.jpg</filename>
-	<filename>images/flags/republique tcheque.jpg</filename>
-	<filename>images/flags/roumanie.jpg</filename>
-	<filename>images/flags/royaume uni.jpg</filename>
-	<filename>images/flags/russie.jpg</filename>
-	<filename>images/flags/singapour.jpg</filename>
-	<filename>images/flags/suede.jpg</filename>
-	<filename>images/flags/thailande.jpg</filename>
-	<filename>images/flags/venezuela.jpg</filename>
-	<filename>images/flags/vietnam.jpg</filename>
-	<filename>images/icons/1-favicon.ico</filename>
-	<filename>images/icons/2-favicon.ico</filename>
-	<filename>images/icons/3-favicon.ico</filename>
-    </images>
-  </administration>
-</mosinstall>
+	<administration>
+		<!-- Administration Menu Section -->
+		<menu img="../media/com_places/images/goldstar.gif">Places</menu>
+		<submenu>
+			<menu task="config">--Configuration</menu>
+			<menu task="section">-Sections</menu>
+			<menu task="lieu">--Places</menu>
+			<menu task="ville">Cities</menu>
+			<menu task="pays">Countries</menu>
+			<menu task="import">Import</menu>
+			<menu task="about">About</menu>
+		</submenu>
+		<!-- Administration Main File Copy Section -->
+		<files folder="admin">
+			<!-- Admin Main File Copy Section -->
+			<filename>admin.places.html.php</filename>
+			<filename>admin.places.php</filename>
+			<filename>config.inc.php</filename>
+			<filename>core/about.html.php</filename>
+			<filename>core/config.html.php</filename>
+			<filename>core/config.php</filename>
+			<filename>core/google_maps.class.php</filename>
+			<filename>core/header_footer.html.php</filename>
+			<filename>core/import.html.php</filename>
+			<filename>core/lieu.html.php</filename>
+			<filename>core/lieu.php</filename>
+			<filename>core/movies.class.db.php</filename>
+			<filename>core/pays.html.php</filename>
+			<filename>core/pays.php</filename>
+			<filename>core/places.class.db.php</filename>
+			<filename>core/places.class.php</filename>
+			<filename>core/places.class.xml.php</filename>
+			<filename>core/sections.html.php</filename>
+			<filename>core/sections.php</filename>
+			<filename>core/ville.html.php</filename>
+			<filename>core/ville.php</filename>
+			<filename>toolbar.places.html.php</filename>
+			<filename>toolbar.places.php</filename>
+			<!-- SQL files section -->
+			<folder>sql</folder>
+			<!--filename>install.mysql.utf8.sql</filename>
+			<filename>uninstall.mysql.utf8.sql</filename-->
+
+		</files>
+	</administration>
+</extension>
