@@ -1,0 +1,10 @@
+com_places
+==========
+
+Joomla component to store places (database / country / city / place / lat long) and display them in google map.
+
+versions history (depuis la reecriture sous joomla 2.5)
+
+2.0.1 : faire marcher l'ancien module installation + creation de la base
+
+
