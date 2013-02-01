@@ -85,7 +85,7 @@
 		<!-- Administration Main File Copy Section -->
 		<files folder="admin">
 			<!-- Admin Main File Copy Section -->
-			<filename>admin.places.html.php</filename>
+			<!--filename>admin.places.html.php</filename>
 			<filename>admin.places.php</filename>
 			<filename>config.inc.php</filename>
 			<filename>core/about.html.php</filename>
@@ -107,12 +107,9 @@
 			<filename>core/ville.html.php</filename>
 			<filename>core/ville.php</filename>
 			<filename>toolbar.places.html.php</filename>
-			<filename>toolbar.places.php</filename>
+			<filename>toolbar.places.php</filename-->
 			<!-- SQL files section -->
 			<folder>sql</folder>
-			<!--filename>install.mysql.utf8.sql</filename>
-			<filename>uninstall.mysql.utf8.sql</filename-->
-
 		</files>
 	</administration>
 </extension>
