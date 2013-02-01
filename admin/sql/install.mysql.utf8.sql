@@ -16,14 +16,6 @@ create table if not exists `#__places_ville` (
 	primary key  (`id`)
 );
 
-create table if not exists `#__places_pays` (
-	`id` int(5) unsigned not null auto_increment,
-	`nom` varchar(30) not null default '?',
-	`drapeau` varchar(50) not null default '?',
-	primary key  (`id`),
-	unique key  (`nom`)
-);
-
 create table if not exists `#__places_section` (
 	`id` int(5) unsigned not null auto_increment,
 	`title` varchar(30) not null default '?',
