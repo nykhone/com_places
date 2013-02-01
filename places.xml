@@ -85,29 +85,6 @@
 		<!-- Administration Main File Copy Section -->
 		<files folder="admin">
 			<!-- Admin Main File Copy Section -->
-			<filename>admin.places.html.php</filename>
-			<filename>admin.places.php</filename>
-			<filename>config.inc.php</filename>
-			<filename>core/about.html.php</filename>
-			<filename>core/config.html.php</filename>
-			<filename>core/config.php</filename>
-			<filename>core/google_maps.class.php</filename>
-			<filename>core/header_footer.html.php</filename>
-			<filename>core/import.html.php</filename>
-			<filename>core/lieu.html.php</filename>
-			<filename>core/lieu.php</filename>
-			<filename>core/movies.class.db.php</filename>
-			<filename>core/pays.html.php</filename>
-			<filename>core/pays.php</filename>
-			<filename>core/places.class.db.php</filename>
-			<filename>core/places.class.php</filename>
-			<filename>core/places.class.xml.php</filename>
-			<filename>core/sections.html.php</filename>
-			<filename>core/sections.php</filename>
-			<filename>core/ville.html.php</filename>
-			<filename>core/ville.php</filename>
-			<filename>toolbar.places.html.php</filename>
-			<filename>toolbar.places.php</filename>
 			<!-- SQL files section -->
 			<folder>sql</folder>
 			<!--filename>install.mysql.utf8.sql</filename>
