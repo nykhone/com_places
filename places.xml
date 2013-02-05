@@ -73,11 +73,14 @@
 
 	<administration>
 		<!-- Administration Menu Section -->
+		<!--menu img="class:places">places</menu-->
 		<menu img="../media/com_places/images/goldstar.gif">Places</menu>
 		<submenu>
-			<menu task="config">--Configuration</menu>
-			<menu task="section">-Sections</menu>
-			<menu task="lieu">--Places</menu>
+			<menu link="option=com_places&amp;view=_pays" view="_pays" img="class:places-pays" alt="places/pays">_Pays</menu>
+			<menu link="option=com_banners&amp;view=tracks" view="tracks" img="class:banners-tracks" alt="Banners/Tracks">com_banners_tracks</menu>
+			<menu task="config">Configuration</menu>
+			<menu task="section">Sections</menu>
+			<menu task="lieu">Places</menu>
 			<menu task="ville">Cities</menu>
 			<menu task="pays">Countries</menu>
 			<menu task="import">Import</menu>
@@ -85,32 +88,11 @@
 		</submenu>
 		<!-- Administration Main File Copy Section -->
 		<files folder="admin">
-			<!-- Admin Main File Copy Section -->
-			<!--filename>admin.places.html.php</filename>
-			<filename>admin.places.php</filename>
-			<filename>config.inc.php</filename>
-			<filename>core/about.html.php</filename>
-			<filename>core/config.html.php</filename>
-			<filename>core/config.php</filename>
-			<filename>core/google_maps.class.php</filename>
-			<filename>core/header_footer.html.php</filename>
-			<filename>core/import.html.php</filename>
-			<filename>core/lieu.html.php</filename>
-			<filename>core/lieu.php</filename>
-			<filename>core/movies.class.db.php</filename>
-			<filename>core/pays.html.php</filename>
-			<filename>core/pays.php</filename>
-			<filename>core/places.class.db.php</filename>
-			<filename>core/places.class.php</filename>
-			<filename>core/places.class.xml.php</filename>
-			<filename>core/sections.html.php</filename>
-			<filename>core/sections.php</filename>
-			<filename>core/ville.html.php</filename>
-			<filename>core/ville.php</filename>
-			<filename>toolbar.places.html.php</filename>
-			<filename>toolbar.places.php</filename-->
-			<!-- SQL files section -->
+			<filename>places.php</filename>
+			<filename>controller.php</filename>
 			<folder>sql</folder>
+			<folder>models</folder>
+			<folder>views</folder>
 		</files>
 	</administration>
 </extension>
