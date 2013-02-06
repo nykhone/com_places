@@ -6,6 +6,7 @@ Joomla component to store places (database / country / city / place / lat long) 
 versions history (depuis la reecriture sous joomla 2.5)
 
 2.0.1 : faire marcher l'ancien module installation + creation de la base
-2.0.2 : voir les pays dans la base de donnees
+2.0.2 : voir la liste des pays de la base de donnees
+2.0.3 : voir les listes de villes, lieux et pays sans bug
 
 
