@@ -76,8 +76,9 @@
 		<!--menu img="class:places">places</menu-->
 		<menu img="../media/com_places/images/goldstar.gif">Places</menu>
 		<submenu>
-			<menu link="option=com_places&amp;view=_pays" view="_pays" img="class:places-pays" alt="places/pays">_Pays</menu>
-			<menu link="option=com_banners&amp;view=tracks" view="tracks" img="class:banners-tracks" alt="Banners/Tracks">com_banners_tracks</menu>
+			<menu link="option=com_places&amp;view=_pays" view="_pays" img="class:places-pays" alt="places/pays">_pays</menu>
+			<menu link="option=com_places&amp;view=_ville" view="_ville" img="class:places-ville" alt="places/ville">_ville</menu>
+			<menu link="option=com_places&amp;view=_lieu" view="_lieu" img="class:places-lieu" alt="places/lieu">_lieu</menu>
 			<menu task="config">Configuration</menu>
 			<menu task="section">Sections</menu>
 			<menu task="lieu">Places</menu>
