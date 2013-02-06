@@ -9,6 +9,8 @@ class places_View_lieu extends JView
 
 	function display( $tpl = null ) 
 	{
+		JToolbarHelper::title( "Places - Lieu" );
+
 		xdebug_break();
 		// Get data from the model
 		$aLieu = $this->get( '_lieu', '_lieu' );
