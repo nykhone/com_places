@@ -2,25 +2,14 @@
 defined( '_JEXEC' ) or die( 'Restricted Access' );
 ?>
 <tr>
-	<th width="5" align="center">
-		<?php echo 'id'; ?>
-	</th>
-	<th width="20" align="center">
-		<?php echo 'nom'; ?>
-	</th>                   
-	<th width="40" align="center">
-		<?php echo 'description'; ?>
-	</th>
-	<th width="20" align="center">
-		<?php echo 'ville'; ?>
-	</th>
-	<th width="20" align="center">
-		<?php echo 'latitude'; ?>
-	</th>
-	<th width="20" align="center">
-		<?php echo 'longitude'; ?>
-	</th>
-	<th width="20" align="center">
-		<?php echo 'section'; ?>
-	</th>
+	<th width="20" align="center">#</th>
+	<th width="20"></th>
+	<th width="20" align="center">Nb</th>
+	<th width="100" align="left">Nom</th>
+	<th width="50" align="left">Ville</th>
+	<th width="30" align="center">Latitude</th>
+	<th width="30" align="center">Longitude</th>
+	<th width="150" align="left">Description</th>
+	<th width="50" align="left">Section(s)</th>
+	<th width="50" align="left">Id</th>
 </tr>

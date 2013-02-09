@@ -1,15 +1,19 @@
 <?php
 
 defined( '_JEXEC' ) or die( 'Restricted Access' );
+$i = 1;
 
 foreach( $this->pays as $aPays )
 {
-	$aName = $aPays->nom;
+	$i = 1 - $i;
 ?>
-<tr>
+<tr class="row<?php echo $i;?>">
+	<td align="center"><?php // echo $aPays->numero; ?></td>
+	<td align="center"><?php // echo "checkbox"; ?></td>
+	<td align="center"><?php echo $aPays->nom; ?></td>
+	<td align="center"><img src="../media/com_places/flags/<?php echo $aPays->drapeau; ?>" /></td>
 	<td align="center"><?php echo $aPays->id; ?></td>
-	<td align="center"><?php echo $aName; ?></td>
-	<td align="center"><img src="../media/com_places/flags/<?php echo $aPays->drapeau; ?>" alt="<?php echo $aName; ?>"/></td>
+	<td align="center"><?php // echo $aPays->nb_villes; ?></td>
 </tr>
 <?php
 }

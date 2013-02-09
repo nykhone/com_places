@@ -2,6 +2,7 @@
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
 jimport('joomla.application.component.modelitem');
+require_once '/home/nykhos/Desktop/www/Joomla_2_5_8/administrator/components/com_places/sql/db_tool.php';
 
 class places_Model_pays extends JModelItem
 {
@@ -9,17 +10,7 @@ class places_Model_pays extends JModelItem
 
 	public function get_pays() 
 	{
-		xdebug_break();
-		# TODO : runSQL facon places.class.db.php
-		# return RunSql('select id, nom, drapeau from jos_places_pays order by nom')
-		$aDB = JFactory::getDBO();
-		$aQuery = $aDB->getQuery( true );
-		$aQuery->select( 'id, nom, drapeau' );
-		$aQuery->from( '#__places_pays' );
-		$aDB->setQuery( (string)$aQuery );
-
-		$this->Pays = $aDB->loadObjectList();
-
+		$this->Pays = DB_Tool::get()->db_getPays();
 		return $this->Pays;
 	}
 }
