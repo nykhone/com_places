@@ -36,25 +36,27 @@
 		]]>
 	</description>	
 
-        <install>
+	<install>
 		<!-- Runs on install -->
-                <sql>
-                        <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
-                        <file driver="mysql" charset="utf8">sql/insert_pays.mysql.utf8.sql</file>
-                </sql>
-        </install>
-        <uninstall>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+			<file driver="mysql" charset="utf8">sql/insert_pays.mysql.utf8.sql</file>
+			<file driver="mysql" charset="utf8">sql/insert_villes.mysql.utf8.sql</file>
+			<file driver="mysql" charset="utf8">sql/insert_lieux.mysql.utf8.sql</file>
+		</sql>
+	</install>
+	<uninstall>
 		<!-- Runs on uninstall -->
-                <sql>
-                        <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
-                </sql>
-        </uninstall>
-        <update>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
+	<update>
 		<!-- Runs on update; New in 2.5 -->
-                <schemas>
-                        <schemapath type="mysql">sql/updates/mysql</schemapath>
-                </schemas>
-        </update>
+		<schemas>
+			<schemapath type="mysql">sql/updates/mysql</schemapath>
+		</schemas>
+	</update>
 
 	<!-- Site Main File Copy Section -->
 	<files folder="site">
@@ -83,7 +85,7 @@
 			<menu task="section">Sections</menu>
 			<menu task="lieu">Places</menu>
 			<menu task="ville">Cities</menu>
-			<menu task="pays">Countries</menu>
+			<menu task="_pays">Countries</menu>
 			<menu task="import">Import</menu>
 			<menu task="about">About</menu>
 		</submenu>
