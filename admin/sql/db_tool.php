@@ -35,7 +35,7 @@ class DB_Tool
 		}
 		else
 		{
-//			$result = $database->loadAssocList();
+//			$result = $aDB->loadAssocList();
 			$result = $aDB->loadObjectList();
 			if ($aDB->getErrorNum())
 			{
@@ -46,4 +46,21 @@ class DB_Tool
 		return $result;
 	}
 
+// ----------------------------------------------------------
+// --> requetes sur la base PAYS
+// ----------------------------------------------------------
+	public function db_getPays()
+	{
+		return $this->__runSql( 'select id, nom, drapeau from #__places_pays order by nom' );
+	}
+
+	public function db_getLieuOrdered()
+	{
+		return $this->__runSql( 'select l.*, v.nom as vnom from #__places_lieu as l, #__places_ville as v where l.ville = v.id order by v.nom asc, l.nom asc');
+	}
+
+	public function db_getVille()
+	{
+		return $this->__runSql( 'select id, nom, pays from #__places_ville order by nom' );
+	}
 }
