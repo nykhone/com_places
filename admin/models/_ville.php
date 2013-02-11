@@ -11,6 +11,18 @@ class places_Model_ville extends JModelItem
 	public function get_ville() 
 	{
 		$this->Ville = DB_Tool::get()->db_getVille();
+
+		foreach( $this->Ville as $aVille )
+		{
+			if ( $aVille->pays > 0 )
+			{
+				$aPays = DB_Tool::get()->db_getPaysDrapeau( $aVille->pays );
+			}
+			$aVille->pays_drapeau = $aPays[0]->drapeau;
+
+			$aLieu = DB_Tool::get()->db_getCountLieuForVille( $aVille->id );
+			$aVille->lieux_count = $aLieu[0]->count;
+		}
 		return $this->Ville;
 	}
 }

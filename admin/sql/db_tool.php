@@ -63,4 +63,24 @@ class DB_Tool
 	{
 		return $this->__runSql( 'select id, nom, pays from #__places_ville order by nom' );
 	}
+
+	public function db_getPaysDrapeau( $theID )
+	{
+		return $this->__runSql( 'select drapeau from #__places_pays where id = ' . $theID );
+	}
+
+	public function db_getCountLieuForVille( $theVilleID )
+	{
+		return $this->__runSql( 'select count(id) as count from #__places_lieu where ville = ' . $theVilleID );
+	}
+
+	public function db_getCountVilleForPays( $thePaysID )
+	{
+		return $this->__runSql( 'select count(id) as count from #__places_ville where pays = ' . $thePaysID );
+	}
+
+	public function db_get_aSection_Details( $theID )
+	{
+		return $this->__runSql( 'select * from #__places_section where id = ' . $theID );
+	}
 }
