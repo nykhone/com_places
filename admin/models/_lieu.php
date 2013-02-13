@@ -1,16 +1,14 @@
 <?php
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
-jimport('joomla.application.component.modelitem');
-require_once '/home/nykhos/Desktop/www/Joomla_2_5_8/administrator/components/com_places/sql/db_tool.php';
+jimport('joomla.application.component.modellist');
+require_once '/home/nykhos/Desktop/www/Joomla_2_5_8/administrator/components/com_places//sql/db_tool.php';
 
-class places_Model_lieu extends JModelItem
+class places_Model_lieu extends JModelList
 {
-	protected $Lieu;
-
-	public function get_lieu() 
+	protected function getListQuery()
 	{
-		$this->Lieu = DB_Tool::get()->db_getLieuOrdered();
+		$this->Lieu = DB_Tool::get()->db_get_allLieux( true );
 		return $this->Lieu;
 	}
 }

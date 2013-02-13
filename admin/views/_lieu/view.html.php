@@ -11,9 +11,9 @@ class places_View_lieu extends JView
 	{
 		JToolbarHelper::title( "Places - Lieu" );
 
-		xdebug_break();
 		// Get data from the model
-		$aLieu = $this->get( '_lieu', '_lieu' );
+		$items = $this->get('Items');
+		$pagination = $this->get('Pagination');
 
 		// Check for errors.
 		if ( count ( $errors = $this->get( 'Errors' ) ) ) 
@@ -23,7 +23,8 @@ class places_View_lieu extends JView
 		}
 
 		// Assign data to the view
-		$this->lieu = $aLieu;
+		$this->items = $items;
+		$this->pagination = $pagination;
 
 		// Display the template
 		parent::display( $tpl );
