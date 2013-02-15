@@ -13,7 +13,7 @@ foreach( $this->pays as $aPays )
 	<td align="center"><?php echo $aPays->nom; ?></td>
 	<td align="center"><img src="../media/com_places/flags/<?php echo $aPays->drapeau; ?>" /></td>
 	<td align="center"><?php echo $aPays->id; ?></td>
-	<td align="center"><?php // echo $aPays->nb_villes; ?></td>
+	<td align="center"><?php echo $aPays->ville_count; ?></td>
 </tr>
 <?php
 }

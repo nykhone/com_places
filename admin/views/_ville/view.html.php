@@ -11,7 +11,6 @@ class places_View_ville extends JView
 	{
 		JToolbarHelper::title( "Places - Ville" );
 
-		xdebug_break();
 		// Get data from the model
 		$aVille = $this->get( '_ville', '_ville' );
 
