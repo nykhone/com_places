@@ -10,7 +10,7 @@ class places_Model_pays extends JModelItem
 
 	public function get_pays() 
 	{
-		$this->Pays = DB_Tool::get()->db_getPays();
+		$this->Pays = DB_Tool::get()->db_get_allPays();
 
 		foreach( $this->Pays as $aPays )
 		{
