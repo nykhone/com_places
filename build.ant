@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Project>
+<project name="com_places" default="build" basedir=".">
+<description>Simple Build file for Joomla Extension development</description>
+
+<!-- load variables from config -->
+<property environment="env" />
+<property name="cfg.componant_name" value="com_places" />
+<property name="cfg.componant_sources_dir" location="/home/nykhos/Scripts" />
+<property name="cfg.componant_releases_dir" location="/home/nykhos/Scripts/_releases_dir" />
+<property name="cfg.joomla_dir" location="/home/nykhos/Desktop/www/Joomla_2_5_8" />
+
+<!-- auto values but should be checked -->
+<property name="cfg.admin_files_dir" location="${cfg.componant_sources_dir}/${cfg.componant_name}/admin" />
+<property name="cfg.site_files_dir" location="${cfg.componant_sources_dir}/${cfg.componant_name}/site" />
+
+<tstamp>
+	<format property="buildtime" pattern="yyyy.MM.dd_HH.mm.ss" />
+</tstamp>
+
+<target name="build" depends="release_component" />
+
+<target name="release_component" depends="clean" description="packages the finaly component file">
+	<mkdir dir="${cfg.componant_releases_dir}/${cfg.componant_name}"/>
+	<zip destfile="${cfg.componant_releases_dir}/${cfg.componant_name}/${cfg.componant_name}_${buildtime}.zip" basedir="${cfg.componant_sources_dir}/${cfg.componant_name}">
+		<exclude name="**/.git/**" />
+		<exclude name="**/.settings/**" />
+		<exclude name=".project" />
+		<exclude name=".buildpath" />
+	</zip>
+</target>
+
+<target name="info" description="prints information">
+	<echo message="Project:﻿  ﻿  ﻿  ${cfg.componant_name}" /> 
+	<tstamp>
+		<format property="infobuildtime" pattern="yyyy/MM/dd HH:mm:ss" />
+	</tstamp>
+	<echo message="Buildtime:﻿  ${infobuildtime}" />
+</target>
+
+<target name="push_localhost" depends="info" description="attemps to update files on localhost server with files from working directory">
+	<!--delete dir="${cfg.joomla_dir}/administrator/components/${cfg.componant_name}" /-->
+	<copy todir="${cfg.joomla_dir}/administrator/components/${cfg.componant_name}" overwrite="true">
+		<fileset dir="${cfg.admin_files_dir}" />
+	</copy>
+	<!--deltree dir="${cfg.joomla_dir}/components/${cfg.componant_name}" /-->
+	<copy todir="${cfg.joomla_dir}/components/${cfg.componant_name}" overwrite="true">
+		<fileset dir="${cfg.site_files_dir}" />
+	</copy>
+</target>
+
+<target name="clean" description="cleans the release dir">
+	<!--delete dir="${cfg.componant_releases_dir}/${cfg.componant_name}"/-->
+	<echo message="clean : ${cfg.componant_releases_dir}/${cfg.componant_name}" /> 
+</target>
+
+</project>
