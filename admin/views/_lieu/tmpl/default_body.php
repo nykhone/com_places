@@ -4,10 +4,11 @@ defined( '_JEXEC' ) or die( 'Restricted Access' );
 
 foreach( $this->items as $i => $item )
 {
+	$j = 1 + $i + $this->pagination->limitstart;
 ?>
 <tr class="row<?php echo $i % 2; ?>">
-	<td align="center"><?php // echo $aLieu->numero; ?></td>
-	<td align="center"><?php // echo "checkbox"; ?></td>
+	<td align="center"><?php echo $j; ?></td>
+	<td align="center"><?php echo JHtml::_('grid.id', $i, $item->id); ?></td>
 	<td align="center"><?php // echo $aLieu->count; ?></td>
 	<td align="center"><?php echo $item->nom; ?></td>
 	<td align="center"><?php echo $item->ville_name; ?></td>

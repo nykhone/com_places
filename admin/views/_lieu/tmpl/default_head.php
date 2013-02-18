@@ -3,7 +3,7 @@ defined( '_JEXEC' ) or die( 'Restricted Access' );
 ?>
 <tr>
 	<th width="20" align="center">#</th>
-	<th width="20"></th>
+	<th width="20"><input type="checkbox" name="toggle" value="" onclick="checkAll(<?php echo count($this->items); ?>);" /></th>
 	<th width="20" align="center">Nb</th>
 	<th width="100" align="left">Nom</th>
 	<th width="50" align="left">Ville</th>

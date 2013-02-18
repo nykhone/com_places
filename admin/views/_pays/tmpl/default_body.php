@@ -1,15 +1,16 @@
 <?php
 
 defined( '_JEXEC' ) or die( 'Restricted Access' );
-$i = 1;
+
+$j = 0;
 
 foreach( $this->pays as $aPays )
 {
-	$i = 1 - $i;
+	$j++;
 ?>
-<tr class="row<?php echo $i;?>">
-	<td align="center"><?php // echo $aPays->numero; ?></td>
-	<td align="center"><?php // echo "checkbox"; ?></td>
+<tr class="row<?php echo $j % 2;?>">
+	<td align="center"><?php echo $j; ?></td>
+	<td align="center"><?php echo JHtml::_('grid.id', $j - 1, $aPays->id); ?></td>
 	<td align="center"><?php echo $aPays->nom; ?></td>
 	<td align="center"><img src="../media/com_places/flags/<?php echo $aPays->drapeau; ?>" /></td>
 	<td align="center"><?php echo $aPays->id; ?></td>
